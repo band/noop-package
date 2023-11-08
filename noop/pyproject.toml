@@ -1,6 +1,10 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
-name = "noop_BAND
-version = "0.0.1"
+name = "noop_BAND"
+version = "0.0.4"
 authors = [
   { name="Bill Anderson", email="band@praxis101.com" },
 ]
@@ -16,6 +20,5 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/band/noop-package/noop"
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+[project.scripts]
+do_nada = "noop_BAND.donada:main"
