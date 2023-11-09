@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# do-nada.py - a NOOP program
+# noop.py - a NOOP program
 
 import logging, os
 logging.basicConfig(level=os.environ.get('LOGLEVEL', 'INFO').upper())

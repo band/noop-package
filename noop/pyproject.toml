@@ -4,9 +4,9 @@ build-backend = "hatchling.build"
 
 [project]
 name = "noop_BAND"
-version = "0.0.4"
+version = "0.0.5"
 authors = [
-  { name="Bill Anderson", email="band@praxis101.com" },
+  { name="Bill Anderson", email="band@acm.org" },
 ]
 description = "An example package"
 readme = "README.md"
@@ -21,4 +21,4 @@ classifiers = [
 "Homepage" = "https://github.com/band/noop-package/noop"
 
 [project.scripts]
-do_nada = "noop_BAND.donada:main"
+noop = "noop_BAND.noop:main"
