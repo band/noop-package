@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "noop_BAND"
-version = "0.1.1"
+version = "0.2.0"
 authors = [
   { name="Bill Anderson", email="band@acm.org" },
 ]
@@ -17,3 +17,8 @@ requires-python = ">=3.11"
 
 [project.scripts]
 noop = "noop_BAND.noop:main"
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple"
+publish-url = "https://test.pypi.org/legacy/"
