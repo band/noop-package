@@ -24,10 +24,19 @@ python3 -m build
 python3 -m twine upload --verbose --repository testpypi dist/*
 #
 # PyPi module can be installed like this:
+# BAND-noop
+
+```console
 pip install -i https://test.pypi.org/simple/ noop-BAND
-# module is run like this:
-noop
-# output is this:
-INFO:root:nothing to see here
 ```
+# module is run like this:
+
+```console
+noop
+```
+# output is this:
+`INFO:root:nothing to see here`
+
+
+
 
