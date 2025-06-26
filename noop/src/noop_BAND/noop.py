@@ -9,7 +9,7 @@ import traceback
 
 def main():
     try:
-        logging.info("nothing to see here")
+        logging.info("nothing going on here")
     except Exception as e:
         traceback.print_exc(e)
 

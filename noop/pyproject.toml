@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "noop_BAND"
-version = "0.2.0"
+version = "0.2.1"
 authors = [
   {name = "Bill Anderson", email = "band@acm.org"}
 ]
