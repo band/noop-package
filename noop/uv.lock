@@ -1,0 +1,8 @@
+version = 1
+revision = 1
+requires-python = ">=3.11"
+
+[[package]]
+name = "noop-band"
+version = "0.2.1"
+source = { editable = "." }
