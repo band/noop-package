@@ -2,15 +2,11 @@ jobs:
   pypi-publish:
     name: upload release to TestPyPI
     runs-on: ubuntu-latest
-    # Specifying a GitHub environment is optional, but strongly encouraged
-    environment: testpypi
+    environment: testpypi  # optional but recommended
     permissions:
-      # IMPORTANT: this permission mandatory for Trusted Publishing
-      id-token: write
+      id-token: write  # required for Trusted Publishing
     steps:
-      # retrieve your distributions here
-	- name: Publish package distributions to TestPyPI
-        - uses: pypa/gh-action-testpypi-publish@release/v1
-	  with:
-	    repository-url: https://test.pypi.org/legacy/
-	  
+      - name: Publish package distributions to TestPyPI
+        uses: pypa/gh-action-testpypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
