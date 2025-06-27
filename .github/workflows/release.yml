@@ -39,4 +39,3 @@ jobs:
       with:
         repository-url: https://test.pypi.org/legacy/
         # No need for password or token - Trusted Publishing handles auth
-	
