@@ -5,15 +5,18 @@ build-backend = "hatchling.build"
 [project]
 name = "noop_BAND"
 version = "0.2.1"
-authors = [
-  {name = "Bill Anderson", email = "band@acm.org"}
-]
 description = "An example package"
+authors = [{name = "Bill Anderson", email = "band@acm.org"}]
 readme = "README.md"
-homepage = "https://github.com/band/noop-package/noop"
-
-dependencies = []
+homepage = "https://github.com/band/noop-package"
+license = {text = "MIT"}
 requires-python = ">=3.11"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
 
 [project.scripts]
 noop = "noop_BAND.noop:main"

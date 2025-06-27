@@ -1,16 +1,42 @@
+name: Publish to TestPyPI
+
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - 'v*'  # Trigger on version tags like v1.0.0
+  workflow_dispatch:  # Allow manual triggering
 
 jobs:
-  pypi-publish:
-    name: upload release to TestPyPI
+  build-and-publish:
     runs-on: ubuntu-latest
-    environment: testpypi  # optional but recommended
     permissions:
-      id-token: write  # required for Trusted Publishing
+      # Required for Trusted Publishing
+      id-token: write
+      contents: read
+    
     steps:
-      - name: Publish package distributions to TestPyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          repository-url: https://test.pypi.org/legacy/
+    - uses: actions/checkout@v4
+    
+    - name: Install uv
+      uses: astral-sh/setup-uv@v4
+      with:
+        version: "latest"
+    
+    - name: Set up Python
+      run: uv python install 3.12
+    
+    - name: Install dependencies
+      run: uv sync --dev
+    
+    - name: Run tests (optional)
+      run: echo "uv run pytest"
+    
+    - name: Build package
+      run: uv build
+    
+    - name: Publish to TestPyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        repository-url: https://test.pypi.org/legacy/
+        # No need for password or token - Trusted Publishing handles auth
+	
