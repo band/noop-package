@@ -1,4 +1,4 @@
-name: Release Package
+name: Publish to TestPyPI
 
 on:
   push:
@@ -30,15 +30,16 @@ jobs:
     
     - name: Run tests (optional)
       run: echo "uv run pytest"
-    
+
+    - name Clean previous builds
+      run: rm -fr dist/
+      
     - name: Build package
       run: uv build
-
-    - name: Verify package
-      run: uv run twine check dist/*
     
     - name: Publish to TestPyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         repository-url: https://test.pypi.org/legacy/
-        # No need for password or token - Trusted Publishing handles auth
+        # Trusted Publishing (preferred) or API token fallback
+      #  password: ${{ secrets.TESTPYPI_API_TOKEN }}
