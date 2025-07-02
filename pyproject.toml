@@ -20,3 +20,8 @@ classifiers = [
 
 [project.scripts]
 noop = "noop_BAND.noop:main"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+]

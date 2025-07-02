@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
+import pytest
+import subprocess
 
-import logging                                                                                                       
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')                                         
-
-@pytest.fixture(scope="module")
-def run_and_verify():
-    assert True
-
+def test_main_output():
+    result = subprocess.run(['python', 'src/noop_BAND/noop.py'], capture_output=True, text=True)
+    assert "nothing going on here" in result.stderr
 
